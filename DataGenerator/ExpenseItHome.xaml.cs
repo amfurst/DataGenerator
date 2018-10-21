@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace DataGenerator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ExpenseItHome.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class ExpenseItHome : Page
     {
-        public MainWindow()
+        public ExpenseItHome()
         {
             InitializeComponent();
+        }
+
+        private void onClick(object sender, RoutedEventArgs e)
+        {
+            // View Expense Report
+            ExpenseReportPage expenseReportPage = new ExpenseReportPage(this.peopleListBox.SelectedItem);
+            this.NavigationService.Navigate(expenseReportPage);
         }
     }
 }
